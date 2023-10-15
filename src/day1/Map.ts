@@ -1,21 +1,8 @@
-export default class Map<T extends (string | number), V> {
-    
+export default class Map<T extends string | number, V> {
+    constructor() {}
 
-    
-
-    constructor() {
-    }
-
-    get(key: T): V | undefined {
-
-}
-    set(key: T, value: V): void {
-
-}
-    delete(key: T): V | undefined {
-
-}
-    size(): number {
-
-}
+    get(key: T): V | undefined {}
+    set(key: T, value: V): void {}
+    delete(key: T): V | undefined {}
+    size(): number {}
 }

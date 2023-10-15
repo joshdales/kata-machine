@@ -1,5 +1,6 @@
-export default function prims(list: WeightedAdjacencyList): WeightedAdjacencyList | null {
-
+export default function prims(
+    list: WeightedAdjacencyList,
+): WeightedAdjacencyList | null {
     // Prims algorithm :: minimum spanning tree
     // What is a minimum spanning tree?
     //  - Requires no cycles
@@ -42,14 +43,16 @@ export default function prims(list: WeightedAdjacencyList): WeightedAdjacencyLis
         // 4. we need to insert the edge from current to new into our mst, set visited, and remove the potential edge
         if (lowestEdge[1] !== null) {
             mst[lowestEdge[0]].push(lowestEdge[1]);
-            mst[lowestEdge[1].to].push({to: lowestEdge[0], weight: lowestEdge[1].weight});
+            mst[lowestEdge[1].to].push({
+                to: lowestEdge[0],
+                weight: lowestEdge[1].weight,
+            });
             visited[lowestEdge[1].to] = true;
             edges.splice(edges.indexOf(lowestEdge as [number, GraphEdge]), 1);
         }
 
         // 5. the newly selected node becomes the current node
         current = lowestEdge[1]?.to || -1;
-
     } while (visited.includes(false) && current >= 0);
 
     return mst;
@@ -57,36 +60,42 @@ export default function prims(list: WeightedAdjacencyList): WeightedAdjacencyLis
 
 if (require.main === module) {
     prims([
-        [ // 0
+        [
+            // 0
             { to: 2, weight: 1 },
             { to: 1, weight: 3 },
         ],
-        [ // 1
+        [
+            // 1
             { to: 0, weight: 3 },
             { to: 4, weight: 1 },
             { to: 3, weight: 3 },
         ],
-        [// 2
+        [
+            // 2
             { to: 0, weight: 1 },
             { to: 3, weight: 7 },
         ],
-        [ // 3
+        [
+            // 3
             { to: 6, weight: 1 },
             { to: 1, weight: 3 },
             { to: 2, weight: 7 },
         ],
-        [ // 4
+        [
+            // 4
             { to: 1, weight: 1 },
             { to: 5, weight: 2 },
         ],
-        [ // 5
+        [
+            // 5
             { to: 4, weight: 2 },
             { to: 6, weight: 1 },
         ],
-        [ // 6
+        [
+            // 6
             { to: 5, weight: 1 },
             { to: 3, weight: 1 },
         ],
     ]);
 }
-

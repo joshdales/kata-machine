@@ -1,20 +1,20 @@
 export default function two_crystal_balls(breaks: boolean[]): number {
-    const jumpAmount = Math.floor(Math.sqrt(breaks.length))
+    const jumpAmount = Math.floor(Math.sqrt(breaks.length));
 
-    let i = jumpAmount
+    let i = jumpAmount;
     for (; i < breaks.length; i += jumpAmount) {
         if (breaks[i]) {
-            break
+            break;
         }
     }
 
-    i -= jumpAmount
+    i -= jumpAmount;
 
     for (let j = 0; j <= jumpAmount && i < breaks.length; ++j, ++i) {
         if (breaks[i]) {
-            return i
+            return i;
         }
     }
 
-    return -1
+    return -1;
 }

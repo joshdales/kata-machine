@@ -1,3 +1,5 @@
-export default function dfs(graph: WeightedAdjacencyList, source: number, needle: number): number[] | null {
-
-}
+export default function dfs(
+    graph: WeightedAdjacencyList,
+    source: number,
+    needle: number,
+): number[] | null {}
