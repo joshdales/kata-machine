@@ -1,3 +1,3 @@
 module.exports = {
-    dsa: ["LRU", "ArrayList", "DFSGraphList", "Trie", "BFSGraphMatrix", "Map"],
+    dsa: ["ArrayList", "Trie", "Map"],
 };
