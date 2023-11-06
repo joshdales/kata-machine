@@ -1,20 +1,3 @@
 module.exports = {
-    dsa: [
-        "DFSOnBST",
-        "LRU",
-        "LinearSearchList",
-        "BinarySearchList",
-        "ArrayList",
-        "BTPreOrder",
-        "BTInOrder",
-        "BTPostOrder",
-        "BTBFS",
-        "CompareBinaryTrees",
-        "DFSOnBST",
-        "DFSGraphList",
-        "Trie",
-        "BFSGraphMatrix",
-        "Map",
-        "MinHeap",
-    ],
+    dsa: ["LRU", "ArrayList", "DFSGraphList", "Trie", "BFSGraphMatrix", "Map"],
 };
